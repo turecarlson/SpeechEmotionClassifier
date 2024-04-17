@@ -2,9 +2,11 @@
 
 FROM tensorflow/tensorflow:latest-gpu
 
-WORKDIR /src
+WORKDIR /model
 
-RUN pip install -U jupyterlab pandas matplotlib
+COPY requirements.txt requirements.txt
+
+RUN pip install -U -r requirements.txt
 
 EXPOSE 8888
 
